@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <title>Contador de Cliques</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto'
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-bottom: 10px;
+            font-size: 14px;
+            padding: 6px;
+            cursor: pointer;
+        }
+
+        span {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contador de Cliques</h1>
+    <button onclick=gerar()>Contando..</button>
+    <span class="number">0</span>
+    <button class="btnZerar" onclick=zerar()>Zerar</button>
+
+    <script>
+        const contadorElemento = document.querySelector('.number');
+        const buttonZerar = document.querySelector('.btnZerar');
+
+        let contador = 1;
+
+        function gerar() {
+            contadorElemento.style.display = 'inline'
+            buttonZerar.style.display = 'inline'
+            contadorElemento.textContent = contador++
+        }
+
+        if (contador === 1) {
+            contadorElemento.style.display = "none";
+            buttonZerar.style.display = "none";
+        }
+
+        function zerar() {
+            contador = 1;
+            contadorElemento.textContent = 0
+            buttonZerar.style.display = "none";
+
+        }
+    </script>
+</body>
+
+</html>
